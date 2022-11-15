@@ -3,8 +3,8 @@ import requests
 import os
 import re
 
-URL = 'https://www.sacred-texts.com/hin/sbe34/index.htm'
-BASE_URL = 'https://www.sacred-texts.com/hin/sbe34/'
+URL = 'https://www.sacred-texts.com/hin/sbe38/index.htm'
+BASE_URL = 'https://www.sacred-texts.com/hin/sbe38/'
 
 content = requests.get(URL).content
 soup = bs.BeautifulSoup(content, 'html.parser')
