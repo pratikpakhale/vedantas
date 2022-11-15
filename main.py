@@ -3,8 +3,8 @@ import requests
 import os
 import re
 
-URL = 'https://www.sacred-texts.com/hin/sbe34/index.htm'
-BASE_URL = 'https://www.sacred-texts.com/hin/sbe34/'
+URL = 'https://www.sacred-texts.com/hin/cjw/index.htm'
+BASE_URL = 'https://www.sacred-texts.com/hin/cjw/'
 
 content = requests.get(URL).content
 soup = bs.BeautifulSoup(content, 'html.parser')
@@ -14,7 +14,7 @@ def filter(text):
     return re.sub(r'[^\x00-\x7F]+', ' ', text)
 
 
-hr = soup.findAll('hr')[3]
+hr = soup.findAll('hr')[1]
 print(hr)
 FOLDER = ''
 next = hr.find_next_sibling()
@@ -42,7 +42,7 @@ while next:
             s = bs.BeautifulSoup(c, 'html.parser')
 
             text = ''
-            h = s.findAll('hr')[2]
+            h = s.findAll('hr')[0]
             next_sibling = h.find_next_sibling()
 
             while next_sibling:
