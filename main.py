@@ -42,7 +42,7 @@ while next:
             s = bs.BeautifulSoup(c, 'html.parser')
 
             text = ''
-            h = s.find('hr')
+            h = s.findAll('hr')[2]
             next_sibling = h.find_next_sibling()
 
             while next_sibling:
